@@ -1,7 +1,7 @@
 <div class="title-page">Shop</div>
 <div class="row">
     <div *ngFor="let product of products" class="col-sm-4 product-space">
-        <div class="product-square">
+        <div class="product-square" [routerLink]="['/product-details',product.id]">
             <div class="title-page">{{product.name}}</div>
         </div>
     </div>

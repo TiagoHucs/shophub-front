@@ -1,4 +1,4 @@
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'shop', component: ShopComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'product-details', component: ProductDetailsComponent },
+  { path: 'product-details/:id', component: ProductDetailsComponent },
  
   ]
 
@@ -32,6 +32,7 @@ const routes: Routes = [
     ContactComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes)

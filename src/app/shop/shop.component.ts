@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SimpleProductVO } from './product-model';
+import { SimpleProductVO } from './shop-product';
 import { ShopService } from './shop.service';
 
 @Component({
