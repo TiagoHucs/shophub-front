@@ -8,11 +8,11 @@ import { Observable } from 'rxjs';
 })
 export class ShopService {
 
-  URL: string = 'shop/';
+  URL: string = 'products/';
 
   constructor(private http: HttpClient) { }
 
   public list(): Observable<any> {
-    return this.http.get<any[]>(`${environment.domain}${this.URL}list`);
+    return this.http.get<any[]>(`${environment.domain}${this.URL}`);
   }
 }

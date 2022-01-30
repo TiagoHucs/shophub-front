@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-md">
+    <!-- Brand -->
+    <a class="navbar-brand">
+        <b>shophub</b>
+    </a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                <a class="nav-link" [routerLink]="['/home']"> Home</a>
+            </li>
+            <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                <a class="nav-link" [routerLink]="['/shop']"> Shop</a>
+            </li>
+
+            <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                <a class="nav-link" [routerLink]="['/blog']"> Blog</a>
+            </li>
+            <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                <a class="nav-link" [routerLink]="['/contact']"> Contact</a>
+            </li>
+        </ul>
+    </div>
+    <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                <a class="nav-link" title="email do usuario"><i class="fa fa-user"></i>
+                    {{username}}</a>
+            </li>
+            <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+
+                <a class="nav-link" (click)="signOut()"><i class="fa fa-power-off"></i> Sair</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="linha">
+</div>
