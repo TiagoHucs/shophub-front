@@ -1,0 +1,12 @@
+.product-space  {
+    background-color: blue;
+    padding: 10px;
+}
+
+.product-square{
+    background-color: rgb(245, 183, 132);
+    border-radius: 25px;
+    border-color: white;
+    border-style: solid;
+    border-width: 3px;
+}
