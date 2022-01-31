@@ -9,3 +9,8 @@ a{
 .navbar-toggler{
     color: #000;
 }
+
+.badge{
+    background-color: blue;
+    color: white;
+}

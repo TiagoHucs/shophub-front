@@ -1,5 +1,15 @@
 <page-title [strTitle]="'Shop'"></page-title>
 <div class="row">
+    <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+          Dropdown button
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Link 1</a>
+          <a class="dropdown-item" href="#">Link 2</a>
+          <a class="dropdown-item" href="#">Link 3</a>
+        </div>
+      </div>
     <div *ngFor="let product of products" class="col-sm-4 product-space">
         <div class="product-square" [routerLink]="['/product-details',product.id]">
             <img src="assets/{{product.img}}" />
@@ -7,4 +17,11 @@
             <h3>${{product.value | number : '1.0-2'}}</h3>
         </div>
     </div>
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
 </div>
