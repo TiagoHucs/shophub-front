@@ -22,4 +22,5 @@ export class ShopProductVO {
     id!: string;
     name!: string;
     value!: string;
+    img!: string;
 }

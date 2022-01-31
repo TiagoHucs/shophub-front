@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ProductDetailsVO } from '../product';
 import { ProductDetailsService } from './product-details.service';
@@ -9,15 +10,16 @@ import { ProductDetailsService } from './product-details.service';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
-  product: ProductDetailsVO = new ProductDetailsVO;
-  img:string | undefined;
-  color:string | undefined;
-  size:string | undefined;
+  product!: ProductDetailsVO;
+  img: string | undefined;
+  form!: FormGroup;
 
   constructor(
     private activateRoute: ActivatedRoute,
-    private service: ProductDetailsService) { }
-  
+    private service: ProductDetailsService,
+    private formBuilder: FormBuilder,
+    ) { }
+
 
   ngOnInit() {
     this.obterIdDaRota();
@@ -30,26 +32,36 @@ export class ProductDetailsComponent implements OnInit {
     });
   }
 
-  getRecurso(id:any){
-    this.service.get(id).subscribe( res => {
+  getRecurso(id: any) {
+    this.service.get(id).subscribe(res => {
       this.product = res;
       this.img = this.product.img;
+      this.buildForm(this.product);
     })
+    
   }
 
-  addToCart(){
-    window.localStorage.setItem('cart', JSON.stringify(this.product))
+
+  addToCart() {
+    window.localStorage.setItem('cart', JSON.stringify(this.form?.getRawValue()))
+    console.log(this.form?.getRawValue())
+    
   }
 
-  changeImg(img:string){
+  changeImg(img: string) {
     this.img = img;
   }
 
-  changeColor(color:string){
-    this.color = color;
+  buildForm(product: ProductDetailsVO){
+    this.form = this.formBuilder.group({
+      id: [product.id, [Validators.required]],
+      qtd: [1, [Validators.required]],
+      size: [null, [Validators.required]],
+      color: [null, [Validators.required]],
+      value: [product.value, [Validators.required]], // valor seria recalculado para finalizar pedido
+    });
+    this.form.invalid
   }
+  
 
-  changeSize(size:string){
-    this.size = size;
-  }
 }

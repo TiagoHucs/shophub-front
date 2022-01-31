@@ -1,19 +1,51 @@
 <page-title [strTitle]="'Product Details'"></page-title>
-<div>
+<div *ngIf="product">
     <div class="row">
         <div class="col-sm-4">
             <h1>{{product.name}}</h1>
             <p>{{product.description}}</p>
             <img-chose [imgs]="product.imgs" (emmiter)="changeImg($event)"></img-chose>
+            <h3>${{product.value}}</h3>
         </div>
         <div class="col-sm-4">
             <img src="assets/{{img}}" />
+            
         </div>
-        <div class="col-sm-4">
-            <ratting-view [ratting]="product.ratting"></ratting-view>
-            <color-chose [colors]="product.colors"></color-chose>
-            <size-chose [sizes]="product.sizes"></size-chose>
-            <button class="form-control btn btn-dark btn-lg btn-block" (click)="addToCart()">
+
+        <div class="col-sm-4" [formGroup]="form">
+
+            <ratting-view class="row" [ratting]="product.ratting"></ratting-view>
+
+            <b>Quantity:</b>
+            <div class="row">
+                <div class="col">         
+                    <input type="number" max="10" min="0" formControlName="qtd"/>          
+                </div>
+            </div>
+
+            <b>Color:</b>
+            <div class="row">
+                <div class="col">
+                    <div *ngFor="let color of product.colors" class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" formControlName="color" value="{{color}}">{{color}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <b>Size:</b>
+            <div class="row">
+                <div class="col">
+                    <div *ngFor="let size of product.sizes" class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" formControlName="size" value="{{size}}">{{size}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <button class="form-control btn btn-dark btn-lg btn-block" (click)="addToCart()"  [disabled]="form.invalid">
                 Add to cart
             </button>
 

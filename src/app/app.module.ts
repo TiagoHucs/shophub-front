@@ -1,31 +1,29 @@
 import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BlogComponent } from './blog/blog.component';
+import { CartComponent } from './cart/cart.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
-import { ProductDetailsService } from './product-details/product-details.service';
 import { ShopComponent } from './shop/shop.component';
-import { ShopService } from './shop/shop.service';
-import { PageTitleComponent } from './util/page-title/page-title.component';
 import { UtilModule } from './util/util.module';
-import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home' , pathMatch: 'prefix' },
+  { path: '', redirectTo: 'home', pathMatch: 'prefix' },
   { path: 'home', component: HomeComponent },
   { path: 'shop', component: ShopComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'product-details/:id', component: ProductDetailsComponent },
   { path: 'cart', component: CartComponent },
- 
-  ]
+
+]
 
 @NgModule({
   declarations: [
@@ -42,6 +40,8 @@ const routes: Routes = [
     UtilModule,
     CommonModule,
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],

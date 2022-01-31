@@ -18,5 +18,6 @@ export class ShopComponent implements OnInit {
       this.products = res;
     })
   }
+  
 
 }

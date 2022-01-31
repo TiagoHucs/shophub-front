@@ -2,8 +2,6 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/cor
 import { CommonModule } from '@angular/common';
 import { PageTitleComponent } from './page-title/page-title.component';
 import { RattingViewComponent } from './ratting-view/ratting-view.component';
-import { ColorChoseComponent } from './color-chose/color-chose.component';
-import { SizeChoseComponent } from './size-chose/size-chose.component';
 import { ImgChoseComponent } from './img-chose/img-chose.component';
 
 
@@ -12,8 +10,6 @@ import { ImgChoseComponent } from './img-chose/img-chose.component';
   declarations: [
     PageTitleComponent,
     RattingViewComponent,
-    ColorChoseComponent,
-    SizeChoseComponent,
     ImgChoseComponent
   ],
   imports: [
@@ -22,8 +18,6 @@ import { ImgChoseComponent } from './img-chose/img-chose.component';
   exports: [
     PageTitleComponent,
     RattingViewComponent,
-    ColorChoseComponent,
-    SizeChoseComponent,
     ImgChoseComponent
   ],
   schemas: [

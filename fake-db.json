@@ -6,9 +6,9 @@
         "ratting":1.5 ,
         "colors": ["white","blue","black"], 
         "sizes": [37,38,39,40,41],
-        "imgs":  ["default-img.PNG","default-img-inv.PNG","default-img.PNG","default-img-inv.PNG"],
-        "imgDefault": "default-img.PNG",
-        "size": 40
+        "imgs":  ["shoes-u.png","shoes-d.png"],
+        "img": "shoes-u.png",
+        "size": 40  
       },
       { "id": 2, "name": "Adidas Shock", 
         "description":"This shoes is the best shoes ever, this is made of best of it could be... This shoes is the best shoes ever, this is made of best of it could be...", 
@@ -16,8 +16,8 @@
         "ratting":2.5 ,
         "colors": ["white","black"], 
         "sizes": [38,39,40,41],
-        "imgs":  ["default-img.PNG","default-img-inv.PNG","default-img.PNG","default-img-inv.PNG"],
-        "img": "default-img.PNG",
+        "imgs":  ["shoes-u.png","shoes-d.png"],
+        "img": "shoes-u.png",
         "size": 38
       },
       { "id": 3, "name": "Mizuno Ultra", 
@@ -26,8 +26,8 @@
         "ratting":3.5 ,
         "colors": ["green","yellow"], 
         "sizes": [37,38,39,40,41],
-        "imgs":  ["default-img.PNG","default-img-inv.PNG","default-img.PNG","default-img-inv.PNG"],
-        "img": "default-img.PNG",
+        "imgs":  ["shoes-u.png","shoes-d.png"],
+        "img": "shoes-u.png",
         "size": 39
       },
       { "id": 4, "name": "Vans Skater Pro", 
@@ -36,8 +36,8 @@
         "ratting":4.5 ,
         "colors": ["blue","red"], 
         "sizes": [37,38,39,40],
-        "imgs":  ["default-img.PNG","default-img-inv.PNG","default-img.PNG","default-img-inv.PNG"],
-        "img": "default-img.PNG",
+        "imgs":  ["shoes-u.png","shoes-d.png"],
+        "img": "shoes-u.png",
         "size": 40
       },
       { "id": 5, "name": "Olimpikus Cooper", 
@@ -46,8 +46,8 @@
         "ratting":5 ,
         "colors": ["blue","black"], 
         "sizes": [39,40,41],
-        "imgs":  ["default-img.PNG","default-img-inv.PNG","default-img.PNG","default-img-inv.PNG"],
-        "img": "default-img.PNG",
+        "imgs":  ["shoes-u.png","shoes-d.png"],
+        "img": "shoes-u.png",
         "size": 40
       },
       { "id": 6, "name": "Kichute Soccer", 
@@ -56,8 +56,8 @@
         "ratting":1.5 ,
         "colors": ["gray","black"], 
         "sizes": [37,38,39],
-        "imgs":  ["default-img.PNG","default-img-inv.PNG","default-img.PNG","default-img-inv.PNG"],
-        "img": "default-img.PNG",
+        "imgs":  ["shoes-u.png","shoes-d.png"],
+        "img": "shoes-u.png",
         "size": 37
       }
     ],
