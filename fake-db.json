@@ -61,9 +61,5 @@
         "size": 37
       }
     ],
-    "cart": [
-      { "id": 3, "name": "Mizuno", "value":32.4,"ratting":3 },
-      { "id": 4, "name": "Havaiana", "value":3.4,"ratting":2 }
-    ],
-    "userdata": { "username": "joão" , "cartValue": 324.50, "cartSize": 2}
+    "userdata": { "username": "joão"}
   }

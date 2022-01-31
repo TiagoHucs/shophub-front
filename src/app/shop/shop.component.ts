@@ -19,7 +19,6 @@ export class ShopComponent implements OnInit {
   }
 
   orderBy(ord:any){
-    console.log(ord);
     this.sort = ord;
     this.getProducts();
   }
