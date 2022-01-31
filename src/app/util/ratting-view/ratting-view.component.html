@@ -1,0 +1,9 @@
+<div>
+    <b>Review:</b><br>
+    <i [ngClass]="ratting > 1 ? 'fa fa-star' : ratting > 0 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
+    <i [ngClass]="ratting > 2 ? 'fa fa-star' : ratting > 1 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
+    <i [ngClass]="ratting > 3 ? 'fa fa-star' : ratting > 2 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
+    <i [ngClass]="ratting > 4 ? 'fa fa-star' : ratting > 3 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
+    <i [ngClass]="ratting > 5 ? 'fa fa-star' : ratting > 4 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
+     {{ratting}} (60)
+</div>

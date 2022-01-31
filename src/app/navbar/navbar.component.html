@@ -28,10 +28,14 @@
         </ul>
     </div>
     <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav" *ngIf="userdata">
             <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
                 <a class="nav-link" title="email do usuario"><i class="fa fa-user"></i>
-                    {{username}}</a>
+                    {{userdata.username}}</a>
+            </li>
+            <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                <a class="nav-link" title="Cart" [routerLink]="['/cart']"><i class="fa fa-shop"></i>
+                    Cart {{userdata.cartSize}}</a>
             </li>
             <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
 

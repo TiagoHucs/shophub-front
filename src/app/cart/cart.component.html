@@ -1,0 +1,37 @@
+<page-title [strTitle]="'Cart'"></page-title>
+<div class="row">
+    <!-- TODO espaços vazios do grid -->
+    <div class="col-sm-3">
+
+    </div>
+
+    <div class="col-sm-6">
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Value</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products">
+                    <td>{{product.name}}</td>
+                    <td>{{product.value}}</td>
+                    <td>remove?</td>
+                </tr>
+                <tr>
+                    <td><b>TOTAL</b></td>
+                    <td><b>567.23</b></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="col-sm-3">
+
+    </div>
+</div>

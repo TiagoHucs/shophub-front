@@ -1,5 +1,23 @@
-<div class="title-page">Product Details</div>
-<div *ngIf="false">
-    <div class="title-page">{{product.name}}</div>
-</div>
+<page-title [strTitle]="'Product Details'"></page-title>
+<div>
+    <div class="row">
+        <div class="col-sm-4">
+            <h1>{{product.name}}</h1>
+            <p>{{product.description}}</p>
+            <img-chose [imgs]="product.imgs" (emmiter)="changeImg($event)"></img-chose>
+        </div>
+        <div class="col-sm-4">
+            <img src="assets/{{img}}" />
+        </div>
+        <div class="col-sm-4">
+            <ratting-view [ratting]="product.ratting"></ratting-view>
+            <color-chose [colors]="product.colors"></color-chose>
+            <size-chose [sizes]="product.sizes"></size-chose>
+            <button class="form-control btn btn-dark btn-lg btn-block" (click)="addToCart()">
+                Add to cart
+            </button>
 
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,7 @@
+<b>Color:</b>
+<div class="row">
+    <div *ngFor="let color of colors" class="col-sm-3 color-space">
+        <div class="color-box" [ngClass]="color == colorChosed ? 'color-box-chosed': 'color-box'" 
+        style="background-color: {{color}}" (click)="chose(color)">{{color}}</div> 
+    </div>
+</div>

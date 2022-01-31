@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SimpleProductVO } from './shop-product';
+import { ShopProductVO } from '../product';
 import { ShopService } from './shop.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ShopService } from './shop.service';
 })
 export class ShopComponent implements OnInit {
 
-  products: SimpleProductVO[] = [];
+  products: ShopProductVO[] = [];
 
   constructor(private service: ShopService) { }
 

@@ -1,15 +1,69 @@
 {
     "products": [
-      { "id": 1, "name": "Nike", "image": "1", "value":3.4,"ratting":5 },
-      { "id": 2, "name": "Adidas", "image": "2", "value":33.4,"ratting":4 },
-      { "id": 3, "name": "Mizuno", "image": "3", "value":32.4,"ratting":3 },
-      { "id": 4, "name": "Havaiana", "image": "4", "value":3.4,"ratting":2 },
-      { "id": 5, "name": "Vans", "image": "5", "value":31.34,"ratting":1 },
-      { "id": 6, "name": "Pumma", "image": "6", "value":553.4,"ratting":0 }
+      { "id": 1, "name": "Nike Air Plus", 
+        "description":"This shoes is the best shoes ever, this is made of best of it could be... This shoes is the best shoes ever, this is made of best of it could be...", 
+        "value":300.40 ,
+        "ratting":1.5 ,
+        "colors": ["white","blue","black"], 
+        "sizes": [37,38,39,40,41],
+        "imgs":  ["default-img.PNG","default-img-inv.PNG","default-img.PNG","default-img-inv.PNG"],
+        "imgDefault": "default-img.PNG",
+        "size": 40
+      },
+      { "id": 2, "name": "Adidas Shock", 
+        "description":"This shoes is the best shoes ever, this is made of best of it could be... This shoes is the best shoes ever, this is made of best of it could be...", 
+        "value":250.99 ,
+        "ratting":2.5 ,
+        "colors": ["white","black"], 
+        "sizes": [38,39,40,41],
+        "imgs":  ["default-img.PNG","default-img-inv.PNG","default-img.PNG","default-img-inv.PNG"],
+        "img": "default-img.PNG",
+        "size": 38
+      },
+      { "id": 3, "name": "Mizuno Ultra", 
+        "description":"This shoes is the best shoes ever, this is made of best of it could be... This shoes is the best shoes ever, this is made of best of it could be...", 
+        "value":279.50 ,
+        "ratting":3.5 ,
+        "colors": ["green","yellow"], 
+        "sizes": [37,38,39,40,41],
+        "imgs":  ["default-img.PNG","default-img-inv.PNG","default-img.PNG","default-img-inv.PNG"],
+        "img": "default-img.PNG",
+        "size": 39
+      },
+      { "id": 4, "name": "Vans Skater Pro", 
+        "description":"This shoes is the best shoes ever, this is made of best of it could be... This shoes is the best shoes ever, this is made of best of it could be...", 
+        "value":420.00 ,
+        "ratting":4.5 ,
+        "colors": ["blue","red"], 
+        "sizes": [37,38,39,40],
+        "imgs":  ["default-img.PNG","default-img-inv.PNG","default-img.PNG","default-img-inv.PNG"],
+        "img": "default-img.PNG",
+        "size": 40
+      },
+      { "id": 5, "name": "Olimpikus Cooper", 
+        "description":"This shoes is the best shoes ever, this is made of best of it could be... This shoes is the best shoes ever, this is made of best of it could be...", 
+        "value":311.33 ,
+        "ratting":5 ,
+        "colors": ["blue","black"], 
+        "sizes": [39,40,41],
+        "imgs":  ["default-img.PNG","default-img-inv.PNG","default-img.PNG","default-img-inv.PNG"],
+        "img": "default-img.PNG",
+        "size": 40
+      },
+      { "id": 6, "name": "Kichute Soccer", 
+        "description":"This shoes is the best shoes ever, this is made of best of it could be... This shoes is the best shoes ever, this is made of best of it could be...", 
+        "value":150.90 ,
+        "ratting":1.5 ,
+        "colors": ["gray","black"], 
+        "sizes": [37,38,39],
+        "imgs":  ["default-img.PNG","default-img-inv.PNG","default-img.PNG","default-img-inv.PNG"],
+        "img": "default-img.PNG",
+        "size": 37
+      }
     ],
     "cart": [
-      { "id": 3, "name": "Mizuno", "image": "3", "value":32.4,"ratting":3 },
-      { "id": 4, "name": "Havaiana", "image": "4", "value":3.4,"ratting":2 }
+      { "id": 3, "name": "Mizuno", "value":32.4,"ratting":3 },
+      { "id": 4, "name": "Havaiana", "value":3.4,"ratting":2 }
     ],
-    "profile": { "name": "joão" }
+    "userdata": { "username": "joão" , "cartValue": 324.50, "cartSize": 2}
   }

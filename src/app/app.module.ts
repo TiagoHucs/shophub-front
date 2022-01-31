@@ -1,6 +1,6 @@
 import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -9,8 +9,12 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ProductDetailsService } from './product-details/product-details.service';
 import { ShopComponent } from './shop/shop.component';
 import { ShopService } from './shop/shop.service';
+import { PageTitleComponent } from './util/page-title/page-title.component';
+import { UtilModule } from './util/util.module';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home' , pathMatch: 'prefix' },
@@ -19,6 +23,7 @@ const routes: Routes = [
   { path: 'blog', component: BlogComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'product-details/:id', component: ProductDetailsComponent },
+  { path: 'cart', component: CartComponent },
  
   ]
 
@@ -29,9 +34,12 @@ const routes: Routes = [
     HomeComponent,
     ShopComponent,
     BlogComponent,
-    ContactComponent
+    ContactComponent,
+    ProductDetailsComponent,
+    CartComponent
   ],
   imports: [
+    UtilModule,
     CommonModule,
     BrowserModule,
     HttpClientModule,

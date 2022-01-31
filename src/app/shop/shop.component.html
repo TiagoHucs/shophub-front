@@ -1,8 +1,10 @@
-<div class="title-page">Shop</div>
+<page-title [strTitle]="'Shop'"></page-title>
 <div class="row">
     <div *ngFor="let product of products" class="col-sm-4 product-space">
         <div class="product-square" [routerLink]="['/product-details',product.id]">
-            <div class="title-page">{{product.name}}</div>
+            <img src="assets/default-img.PNG" />
+            <h2>{{product.name}}</h2>
+            <h3>${{product.value | number : '1.0-2'}}</h3>
         </div>
     </div>
 </div>
