@@ -12,7 +12,9 @@ export class ShopService {
 
   constructor(private http: HttpClient) { }
 
-  public list(): Observable<any> {
-    return this.http.get<any[]>(`${environment.domain}${this.URL}`);
+  public list(sort:string): Observable<any> {
+    const sortUrl = sort == null ? '' : '?_sort=' + sort;
+
+    return this.http.get<any[]>(`${environment.domain}${this.URL}${sortUrl}`);
   }
 }

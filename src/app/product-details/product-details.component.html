@@ -5,7 +5,7 @@
             <h1>{{product.name}}</h1>
             <p>{{product.description}}</p>
             <img-chose [imgs]="product.imgs" (emmiter)="changeImg($event)"></img-chose>
-            <h3>${{product.value}}</h3>
+            <h3>${{product.value | number : '1.2-2'}}</h3>
         </div>
         <div class="col-sm-4">
             <img src="assets/{{img}}" />

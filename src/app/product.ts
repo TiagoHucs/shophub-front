@@ -21,6 +21,7 @@ export class ProductDetailsVO {
 export class ShopProductVO {
     id!: string;
     name!: string;
-    value!: string;
+    value!: number;
     img!: string;
+    ratting!: number;
 }

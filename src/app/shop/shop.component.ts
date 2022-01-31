@@ -10,11 +10,22 @@ import { ShopService } from './shop.service';
 export class ShopComponent implements OnInit {
 
   products: ShopProductVO[] = [];
+  sort: string = 'name';
 
   constructor(private service: ShopService) { }
 
   ngOnInit() {
-    this.service.list().subscribe( res => {
+    this.getProducts();
+  }
+
+  orderBy(ord:any){
+    console.log(ord);
+    this.sort = ord;
+    this.getProducts();
+  }
+
+  getProducts(){
+    this.service.list(this.sort).subscribe( res => {
       this.products = res;
     })
   }
