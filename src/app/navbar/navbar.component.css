@@ -2,15 +2,14 @@ a{
     color: #000;
 }
 
-.navbar-toggler-icon{
-    color: #000;
+.navbar-light a{
+    color: black;
 }
 
-.navbar-toggler{
-    color: #000;
+.navbar-light .navbar-toggler-icon{
+    color: black;
 }
 
-.badge{
-    background-color: rgb(0, 0, 163);
-    color: white;
+.nav-link{
+    cursor: pointer;
 }

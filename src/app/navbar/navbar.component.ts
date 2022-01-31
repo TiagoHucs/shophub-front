@@ -9,7 +9,7 @@ import { UserDataVO } from './userdata';
 })
 export class NavbarComponent implements OnInit {
   userdata: UserDataVO | undefined;
-
+  cartSize = 0;
   constructor(private service: NavbarService) { }
 
   ngOnInit(): void {

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { ProductDetailsVO } from '../product';
+import { ActivatedRoute, Router } from '@angular/router';
+import { NotifierService } from 'angular-notifier';
+import { ProductDetailsVO, ShopProductVO } from '../product';
 import { ProductDetailsService } from './product-details.service';
 
 @Component({
@@ -15,9 +16,11 @@ export class ProductDetailsComponent implements OnInit {
   form!: FormGroup;
 
   constructor(
+    private router: Router,
     private activateRoute: ActivatedRoute,
     private service: ProductDetailsService,
     private formBuilder: FormBuilder,
+    private notifier: NotifierService,
     ) { }
 
 
@@ -38,14 +41,15 @@ export class ProductDetailsComponent implements OnInit {
       this.img = this.product.img;
       this.buildForm(this.product);
     })
-    
   }
 
-
   addToCart() {
-    window.localStorage.setItem('cart', JSON.stringify(this.form?.getRawValue()))
-    console.log(this.form?.getRawValue())
-    
+    var cartProducts = JSON.parse(localStorage.getItem('cart') || '[]');
+    cartProducts.push(this.form?.getRawValue());
+    localStorage.setItem('cart', JSON.stringify(cartProducts));
+    this.buildForm(this.product);
+    this.notifier.notify("success", this.product.name + " added to cart");
+    this.router.navigateByUrl('/cart');
   }
 
   changeImg(img: string) {
@@ -55,12 +59,13 @@ export class ProductDetailsComponent implements OnInit {
   buildForm(product: ProductDetailsVO){
     this.form = this.formBuilder.group({
       id: [product.id, [Validators.required]],
+      name: [product.name, [Validators.required]],
       qtd: [1, [Validators.required]],
       size: [null, [Validators.required]],
       color: [null, [Validators.required]],
-      value: [product.value, [Validators.required]], // valor seria recalculado para finalizar pedido
+      value: [product.value, [Validators.required]], 
     });
-    this.form.invalid
+
   }
   
 

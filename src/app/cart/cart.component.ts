@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ShopProductVO } from '../product';
 
 @Component({
   selector: 'app-cart',
@@ -6,18 +7,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  products = [
-    { "id": 1, "name": "Nike", "value":3.4 },
-    { "id": 2, "name": "Adidas", "value":33.4 },
-    { "id": 3, "name": "Mizuno", "value":32.4 },
-    { "id": 4, "name": "Havaiana", "value":3.4 },
-    { "id": 5, "name": "Vans", "value":31.34 },
-    { "id": 6, "name": "Pumma", "value":553.4 }
-  ]
+  products: ShopProductVO[] = [];
+  total = 0;
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.getCart();
+  }
+
+  getCart(){
+    this.products = JSON.parse(localStorage.getItem('cart') || '[]');
+    this.total = 0;
+    this.products.forEach(p => {
+      this.total += (p.value * p.qtd); 
+    })
+  }
+
+  remove(id:string){
+    var index = this.products.map(x => {
+      return x.id;
+    }).indexOf(id);
+    this.products.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(this.products));
+    this.getCart();
   }
 
 }
